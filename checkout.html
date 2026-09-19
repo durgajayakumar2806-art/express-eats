@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Express Eats</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🍴</span>
+            <span>Express <strong>Eats</strong></span>
+        </a>
+
+        <button class="mobile-menu-button">
+            ☰
+        </button>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="restaurants.html">Restaurants</a>
+
+            <a href="menu.html">Menu</a>
+
+            <a href="index.html#offers">Offers</a>
+
+            <a href="order-history.html">Orders</a>
+
+            <a href="cart.html" class="cart-button">
+
+                <span>🛒</span>
+
+                <span>Cart</span>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= CHECKOUT HERO ================= -->
+
+<section class="page-hero checkout-hero">
+
+    <div class="container">
+
+        <div class="page-hero-content">
+
+            <span class="hero-tag">
+                🔒 Secure checkout
+            </span>
+
+            <h1>
+                Complete Your Order
+            </h1>
+
+            <p>
+                Enter your details and we'll get your
+                favourite food on its way.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<main class="checkout-page">
+
+    <div class="container">
+
+        <div class="checkout-layout">
+
+
+            <!-- ================= CUSTOMER FORM ================= -->
+
+            <section class="checkout-form-card">
+
+                <div class="checkout-card-heading">
+
+                    <span class="step-number">
+                        1
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Delivery Details
+                        </h2>
+
+                        <p>
+                            Where should we deliver your order?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="checkout-form">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="customer-name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                        <small class="form-error"
+                               id="name-error">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="customer-phone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customer-phone"
+                            placeholder="Enter 10-digit mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                        <small class="form-error"
+                               id="phone-error">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="customer-email">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customer-email"
+                            placeholder="example@email.com"
+                            required
+                        >
+
+                        <small class="form-error"
+                               id="email-error">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group">
+
+                        <label for="customer-address">
+                            Delivery Address *
+                        </label>
+
+                        <textarea
+                            id="customer-address"
+                            rows="4"
+                            placeholder="House / Flat No., Street, Area, City, PIN Code"
+                            required
+                        ></textarea>
+
+                        <small class="form-error"
+                               id="address-error">
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- INSTRUCTIONS -->
+
+                    <div class="form-group">
+
+                        <label for="delivery-instructions">
+                            Delivery Instructions
+                            <span>(Optional)</span>
+                        </label>
+
+                        <textarea
+                            id="delivery-instructions"
+                            rows="3"
+                            placeholder="Example: Please call when you arrive."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="checkout-card-heading payment-heading">
+
+                        <span class="step-number">
+                            2
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Payment Method
+                            </h2>
+
+                            <p>
+                                Select your preferred payment option.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Cash on Delivery"
+                                checked
+                            >
+
+                            <span>
+                                💵 Cash on Delivery
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="UPI"
+                            >
+
+                            <span>
+                                📱 UPI
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Card"
+                            >
+
+                            <span>
+                                💳 Card
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="place-order-button">
+
+                        Place Order
+                        🚀
+
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ================= ORDER SUMMARY ================= -->
+
+            <aside class="checkout-summary">
+
+                <div class="checkout-summary-header">
+
+                    <div>
+
+                        <h2>
+                            Your Order
+                        </h2>
+
+                        <p id="checkout-item-count">
+                            0 items
+                        </p>
+
+                    </div>
+
+                    <span>
+                        🛍️
+                    </span>
+
+                </div>
+
+
+                <div id="checkout-items"
+                     class="checkout-items">
+
+                    <!-- JavaScript inserts items -->
+
+                </div>
+
+
+                <div class="checkout-divider"></div>
+
+
+                <div class="checkout-summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="checkout-subtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="checkout-delivery">
+                        ₹40
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-summary-row discount-row">
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="checkout-discount">
+                        - ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-divider"></div>
+
+
+                <div class="checkout-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="checkout-total">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-security">
+
+                    🔒 Your order information is securely
+                    processed.
+
+                </div>
+
+
+                <a href="cart.html"
+                   class="back-cart-link">
+
+                    ← Back to Cart
+
+                </a>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-about">
+
+            <a href="index.html"
+               class="footer-logo">
+                🍴 Express Eats
+            </a>
+
+            <p>
+                Fast, fresh and delicious food delivered
+                straight to your doorstep.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#">📸</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">💼</a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="index.html#offers">
+                Offers
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Customer
+            </h3>
+
+            <a href="cart.html">
+                My Cart
+            </a>
+
+            <a href="order-history.html">
+                Order History
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Coimbatore, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉️ support@expresseats.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Express Eats. All rights reserved.
+        </p>
+
+        <p>
+            Built with HTML, CSS & JavaScript
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="js/data.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>

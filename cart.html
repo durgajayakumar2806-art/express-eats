@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | Express Eats</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Cart Page CSS -->
+    <style>
+        .cart-page {
+            padding: 150px 0 80px;
+            min-height: 80vh;
+        }
+
+        .cart-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cart-heading h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .cart-heading p {
+            color: #777;
+        }
+
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .cart-items-box,
+        .cart-summary {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .cart-items-box h2,
+        .cart-summary h2 {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 85px;
+            height: 85px;
+            border-radius: 15px;
+            background: #fff1eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            flex-shrink: 0;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-details p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .cart-item-price {
+            color: #ff5a36;
+            font-weight: 700;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .quantity-control button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background: #fff0eb;
+            color: #ff5a36;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .quantity-control span {
+            font-weight: 600;
+        }
+
+        .remove-item {
+            border: none;
+            background: transparent;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 18px 0;
+            color: #555;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid #eeeeee;
+            padding-top: 20px;
+            font-size: 21px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .summary-row.total span:last-child {
+            color: #ff5a36;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #ff5a36;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: #e74725;
+            transform: translateY(-2px);
+        }
+
+        .continue-btn {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #ff5a36;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .clear-cart-btn {
+            border: none;
+            background: #fff0eb;
+            color: #ff5a36;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .empty-cart .empty-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .empty-cart h2 {
+            margin-bottom: 10px;
+        }
+
+        .empty-cart p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 800px) {
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-heading h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cart-item {
+                align-items: flex-start;
+            }
+
+            .cart-item-image {
+                width: 65px;
+                height: 65px;
+                font-size: 32px;
+            }
+
+            .cart-item-details h3 {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                  <span class="logo-icon">🍴</span>
+                  <span>Express <strong>Eats</strong></span>
+            </a>>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="index.html#offers">Offers</a>
+                <a href="order-success.html">Orders</a>
+            </nav>
+
+            <a href="cart.html" class="cart-button">
+
+                <span>🛒</span>
+
+                <span>Cart</span>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+
+            <button class="mobile-menu-button">☰</button>
+
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <main class="cart-page">
+
+        <div class="container">
+
+            <div class="cart-heading">
+                <h1>Your Shopping Cart 🛒</h1>
+                <p>Review your delicious choices before checkout.</p>
+            </div>
+
+            <div class="cart-layout">
+
+                <!-- Cart Items -->
+                <section class="cart-items-box">
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <h2>Your Items</h2>
+
+                        <button class="clear-cart-btn" id="clear-cart-btn">
+                            Clear Cart
+                        </button>
+                    </div>
+
+                    <div id="cart-items-container">
+                        <!-- Cart items will be created by JavaScript -->
+                    </div>
+
+                </section>
+
+                <!-- Cart Summary -->
+                <aside class="cart-summary">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">₹0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery Fee</span>
+                        <span id="delivery-fee">₹40</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Discount</span>
+                        <span id="discount">₹0</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cart-total">₹0</span>
+                    </div>
+
+                    <a href="checkout.html" class="checkout-btn">
+                        Proceed to Checkout →
+                    </a>
+
+                    <a href="menu.html" class="continue-btn">
+                        ← Continue Shopping
+                    </a>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Express Eats. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

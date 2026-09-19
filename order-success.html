@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | Express Eats</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+             <span class="logo-icon">🍴</span>
+             <span>Express <strong>Eats</strong></span>
+        </a>
+
+
+        <button class="mobile-menu-button">
+            ☰
+        </button>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="index.html#offers">
+                Offers
+            </a>
+
+            <a href="order-history.html">
+                Orders
+            </a>
+
+            <a href="cart.html" class="cart-button">
+
+                <span>🛒</span>
+
+                <span>Cart</span>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= SUCCESS ================= -->
+
+<main class="success-page">
+
+    <div class="container">
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <section class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <span class="success-tag">
+                🎉 Order placed successfully
+            </span>
+
+
+            <h1>
+                Your Order is Confirmed!
+            </h1>
+
+
+            <p>
+                Thank you for ordering with Express Eats.
+                Your delicious food is being prepared.
+            </p>
+
+
+            <div class="order-id-box">
+
+                <span>
+                    Order ID
+                </span>
+
+                <strong id="success-order-id">
+                    #EE00000000
+                </strong>
+
+            </div>
+
+
+            <div class="success-actions">
+
+                <a href="index.html"
+                   class="primary-button">
+
+                    🏠 Back to Home
+
+                </a>
+
+
+                <a href="order-history.html"
+                   class="secondary-button">
+
+                    📦 View Orders
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ORDER DETAILS ================= -->
+
+        <section class="success-details">
+
+
+            <!-- CUSTOMER -->
+
+            <div class="success-info-card">
+
+                <div class="success-info-heading">
+
+                    <span>
+                        👤
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Delivery Details
+                        </h2>
+
+                        <p>
+                            Your order will be delivered to
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-details">
+
+                    <p>
+                        <strong>Name:</strong>
+                        <span id="success-name">
+                            -
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        <span id="success-phone">
+                            -
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="success-email">
+                            -
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Address:</strong>
+                        <span id="success-address">
+                            -
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Payment:</strong>
+                        <span id="success-payment">
+                            -
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ORDER ITEMS -->
+
+            <div class="success-info-card">
+
+                <div class="success-info-heading">
+
+                    <span>
+                        🛍️
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Ordered Items
+                        </h2>
+
+                        <p id="success-item-count">
+                            0 items
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="success-items">
+
+                    <!-- JavaScript inserts items -->
+
+                </div>
+
+
+                <div class="success-total-box">
+
+                    <div>
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="success-subtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="success-delivery">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-discount">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="success-discount">
+                            - ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-grand-total">
+
+                        <span>
+                            Total Paid
+                        </span>
+
+                        <strong id="success-total">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TRACKING ================= -->
+
+        <section class="tracking-card">
+
+            <div class="tracking-heading">
+
+                <div>
+
+                    <span class="success-tag">
+                        📍 Live order journey
+                    </span>
+
+                    <h2>
+                        Track Your Order
+                    </h2>
+
+                    <p>
+                        Estimated delivery:
+                        <strong>
+                            30–45 minutes
+                        </strong>
+                    </p>
+
+                </div>
+
+                <span class="tracking-icon">
+                    🚴
+                </span>
+
+            </div>
+
+
+            <div class="tracking-timeline">
+
+
+                <!-- STEP 1 -->
+
+                <div class="tracking-step completed">
+
+                    <div class="tracking-circle">
+                        ✓
+                    </div>
+
+                    <div class="tracking-content">
+
+                        <h3>
+                            Order Confirmed
+                        </h3>
+
+                        <p>
+                            Your order has been received.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 2 -->
+
+                <div class="tracking-step active">
+
+                    <div class="tracking-circle">
+                        🍳
+                    </div>
+
+                    <div class="tracking-content">
+
+                        <h3>
+                            Preparing Your Food
+                        </h3>
+
+                        <p>
+                            The restaurant is preparing
+                            your delicious meal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 3 -->
+
+                <div class="tracking-step">
+
+                    <div class="tracking-circle">
+                        🛵
+                    </div>
+
+                    <div class="tracking-content">
+
+                        <h3>
+                            Out for Delivery
+                        </h3>
+
+                        <p>
+                            A delivery partner will pick up
+                            your order.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 4 -->
+
+                <div class="tracking-step">
+
+                    <div class="tracking-circle">
+                        🏠
+                    </div>
+
+                    <div class="tracking-content">
+
+                        <h3>
+                            Delivered
+                        </h3>
+
+                        <p>
+                            Enjoy your meal!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-about">
+
+            <a href="index.html"
+               class="footer-logo">
+
+                🍴 Express Eats
+
+            </a>
+
+            <p>
+                Fast, fresh and delicious food delivered
+                straight to your doorstep.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="index.html#offers">
+                Offers
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Customer
+            </h3>
+
+            <a href="cart.html">
+                My Cart
+            </a>
+
+            <a href="order-history.html">
+                Order History
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Coimbatore, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉️ support@expresseats.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Express Eats. All rights reserved.
+        </p>
+
+        <p>
+            Built with HTML, CSS & JavaScript
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="js/data.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/orders.js"></script>
+
+
+</body>
+
+</html>

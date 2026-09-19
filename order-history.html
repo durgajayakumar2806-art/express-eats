@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | Express Eats</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="order-history-page">
+
+    <!-- ============================= -->
+    <!-- NAVBAR -->
+    <!-- ============================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                 <span class="logo-icon">🍴</span>
+                 <span>Express <strong>Eats</strong></span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="index.html#offers">
+                    Offers
+                </a>
+
+                <a href="order-history.html" class="active">
+                    Orders
+                </a>
+
+                <a href="cart.html" class="cart-button">
+
+                <span>🛒</span>
+
+                <span>Cart</span>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- PAGE HERO -->
+    <!-- ============================= -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <h1>My Orders</h1>
+
+            <p>
+                Track your recent food orders and view
+                your order details.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- ORDERS -->
+    <!-- ============================= -->
+
+    <main class="orders-page">
+
+        <div class="container">
+
+            <div class="orders-header">
+
+                <h2>
+                    Order History
+                </h2>
+
+                <button
+                    class="clear-orders-btn"
+                    onclick="clearOrderHistory()"
+                >
+                    Clear History
+                </button>
+
+            </div>
+
+
+            <!-- ORDER LIST -->
+
+            <div id="order-list">
+
+                <!-- Orders will appear here -->
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="no-orders"
+                class="no-orders"
+            >
+
+                <div class="no-orders-icon">
+                    🛍️
+                </div>
+
+                <h2>
+                    No orders yet
+                </h2>
+
+                <p>
+                    Your completed orders will
+                    appear here.
+                </p>
+
+                <a
+                    href="menu.html"
+                    class="primary-btn"
+                >
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <h3>
+                Express Eats
+            </h3>
+
+            <p>
+                Fast. Fresh. Delivered.
+            </p>
+
+            <p>
+                © 2026 Express Eats. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="js/app.js"></script>
+    <script src="js/order-history.js"></script>
+
+</body>
+
+</html>

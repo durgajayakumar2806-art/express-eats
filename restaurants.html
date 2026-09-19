@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurants | Express Eats</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍴</span>
+                <span>Express <strong>Eats</strong></span>
+            </a>
+
+            <button class="mobile-menu-button" aria-label="Open Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="restaurants.html" class="active">
+                    Restaurants
+                </a>
+
+                <a href="menu.html">Menu</a>
+
+                <a href="index.html#offers">
+                    Offers
+                </a>
+
+                <a href="order-history.html">
+                    Orders
+                </a>
+
+                <a href="cart.html" class="cart-button">
+
+                <span>🛒</span>
+
+                <span>Cart</span>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+                </a>
+
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <div class="page-hero-content">
+
+                <span class="hero-tag">
+                    🍽️ Discover delicious food
+                </span>
+
+                <h1>
+                    Explore Restaurants
+                </h1>
+
+                <p>
+                    Discover the best restaurants around you and
+                    order your favourite meals in just a few clicks.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESTAURANT SECTION ================= -->
+
+    <main class="restaurants-page">
+
+        <div class="container">
+
+            <!-- Search and Filter -->
+
+            <div class="restaurant-toolbar">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="restaurant-search"
+                        placeholder="Search restaurants or cuisine..."
+                    >
+
+                </div>
+
+
+                <select id="restaurant-sort">
+
+                    <option value="default">
+                        Sort by
+                    </option>
+
+                    <option value="rating">
+                        Highest Rating
+                    </option>
+
+                    <option value="delivery">
+                        Fastest Delivery
+                    </option>
+
+                    <option value="name">
+                        Name A-Z
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Restaurant Count -->
+
+            <div class="results-header">
+
+                <div>
+
+                    <h2>
+                        Popular Restaurants
+                    </h2>
+
+                    <p id="restaurant-count">
+                        Showing restaurants
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Restaurant Cards -->
+
+            <div
+                class="restaurant-grid"
+                id="restaurant-list"
+            >
+
+                <!-- JavaScript will generate restaurants here -->
+
+            </div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="restaurant-empty"
+                class="empty-state"
+                style="display: none;"
+            >
+
+                <div class="empty-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    No restaurants found
+                </h3>
+
+                <p>
+                    Try searching for another restaurant or cuisine.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-about">
+
+                <a href="index.html" class="footer-logo">
+                    🍴 Express Eats
+                </a>
+
+                <p>
+                    Fast, fresh and delicious food delivered
+                    straight to your doorstep.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Instagram">📸</a>
+
+                    <a href="#" aria-label="Facebook">📘</a>
+
+                    <a href="#" aria-label="Twitter">🐦</a>
+
+                    <a href="#" aria-label="LinkedIn">💼</a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="restaurants.html">Restaurants</a>
+
+                <a href="menu.html">Menu</a>
+
+                <a href="index.html#offers">Offers</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Customer</h3>
+
+                <a href="cart.html">My Cart</a>
+
+                <a href="order-history.html">Order History</a>
+
+                <a href="#">Help Center</a>
+
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>📍 Coimbatore, Tamil Nadu</p>
+
+                <p>📞 +91 98765 43210</p>
+
+                <p>✉️ support@expresseats.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Express Eats. All rights reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/data.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/restaurants.js"></script>
+
+</body>
+
+</html>
